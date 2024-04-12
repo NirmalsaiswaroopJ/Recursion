@@ -1,0 +1,69 @@
+Finding all possible subarrays from the given array.
+
+Sure, let's walk through the example step by step with the input array `[1, 2, 3]`:
+
+1. **Initial Call**: We start by calling the function `all_subarray(arr, 0, [])`.
+   
+2. **Base Case Check**: Since the index (`0`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+3. **Include Element 1**: We include the element at index `0`, which is `1`, in the `temp` list.
+
+4. **Recursive Call 1**: We call `all_subarray(arr, 1, [1])`.
+
+5. **Base Case Check**: Since the index (`1`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+6. **Include Element 2**: We include the element at index `1`, which is `2`, in the `temp` list. Now, `temp` is `[1, 2]`.
+
+7. **Recursive Call 2**: We call `all_subarray(arr, 2, [1, 2])`.
+
+8. **Base Case Check**: Since the index (`2`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+9. **Include Element 3**: We include the element at index `2`, which is `3`, in the `temp` list. Now, `temp` is `[1, 2, 3]`.
+
+10. **Base Case Check**: Since the index (`3`) is now equal to the length of the array (`3`), we print `temp`, which is `[1, 2, 3]`.
+
+11. **Return from Recursive Call 2**: We return to the previous recursive call with `temp` still as `[1, 2]`.
+
+12. **Exclude Element 3**: We remove the last element from `temp`, so now `temp` is `[1]`.
+
+13. **Base Case Check**: Since the index (`2`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+14. **Exclude Element 3**: We do not include the element at index `2` in the `temp` list.
+
+15. **Base Case Check**: Since the index (`2`) is now equal to the length of the array (`3`), we print `temp`, which is `[1]`.
+
+16. **Return from Recursive Call 1**: We return to the initial call with `temp` still as `[1]`.
+
+17. **Exclude Element 2**: We remove the last element from `temp`, so now `temp` is `[]`.
+
+18. **Base Case Check**: Since the index (`1`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+19. **Include Element 2**: We include the element at index `1`, which is `2`, in the `temp` list. Now, `temp` is `[2]`.
+
+20. **Recursive Call 3**: We call `all_subarray(arr, 2, [2])`.
+
+21. **Base Case Check**: Since the index (`2`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+22. **Include Element 3**: We include the element at index `2`, which is `3`, in the `temp` list. Now, `temp` is `[2, 3]`.
+
+23. **Base Case Check**: Since the index (`3`) is now equal to the length of the array (`3`), we print `temp`, which is `[2, 3]`.
+
+24. **Return from Recursive Call 3**: We return to the previous recursive call with `temp` still as `[2]`.
+
+25. **Exclude Element 3**: We remove the last element from `temp`, so now `temp` is `[2]`.
+
+26. **Base Case Check**: Since the index (`2`) is now equal to the length of the array (`3`), we print `temp`, which is `[2]`.
+
+27. **Return from Recursive Call 1**: We return to the initial call with `temp` still as `[]`.
+
+28. **Exclude Element 1**: We remove the last element from `temp`, so now `temp` is `[]`.
+
+29. **Base Case Check**: Since the index (`0`) is not greater than or equal to the length of the array (`3`), we proceed.
+
+30. **Include Element 1**: We include the element at index `0`, which is `1`, in the `temp` list. Now, `temp` is `[1]`.
+
+31. **Recursive Call 4**: We call `all_subarray(arr, 1, [1])`.
+
+32. **...**: The process continues recursively until all possible subsets are printed.
+
+This process generates and prints all possible subsets of the input array `[1, 2, 3]`. Each step involves either including or excluding an element from the current subset being formed.
